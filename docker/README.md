@@ -41,5 +41,11 @@ Docker components:
 - Run playbook
 
   ```bash
-  ansible-playbook -i inventories -e @group_vars/main.yaml playbook.yaml
+  ansible-playbook -i inventories -e @group_vars/main.yaml playbook.yaml --tags install
   ```
+
+## Uninstall
+
+```bash
+ansible-playbook -i inventories -e @group_vars/main.yaml playbook.yaml --tags uninstall
+```

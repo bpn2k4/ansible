@@ -1,0 +1,4 @@
+---
+# Users to remove from Docker group
+docker_users:
+  - "{{ ansible_user }}"

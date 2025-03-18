@@ -1,0 +1,19 @@
+---
+docker_components:
+  - docker-compose-plugin
+  - docker-buildx-plugin
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+docker_data_directories:
+  - /var/lib/docker
+  - /var/lib/containerd
+  - /etc/docker
+docker_copy_file_destination: /tmp
+docker_deb_files:
+  - containerd.deb
+  - docker-buildx-plugin.deb
+  - docker-ce-cli.deb
+  - docker-ce.deb
+  - docker-compose-plugin.deb
+docker_docker_group: docker

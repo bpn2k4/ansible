@@ -1,0 +1,22 @@
+---
+- name: Uninstall Docker packages
+  shell: |
+    dpkg --remove {{ item }}
+  loop: "{{ docker_components }}"
+
+- name: Purge Docker packages
+  shell: |
+    dpkg --purge {{ item }}
+  loop: "{{ docker_components }}"
+
+- name: Remove Docker data directories
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop: "{{ docker_data_directories }}"
+
+- name: Remove Docker packages file
+  file:
+    path: "{{ docker_copy_file_destination }}/{{ item }}"
+    state: absent
+  loop: "{{ docker_deb_files }}"

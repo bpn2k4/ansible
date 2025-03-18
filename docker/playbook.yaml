@@ -3,3 +3,13 @@
   become: true
   roles:
     - docker
+  tags:
+    - install
+
+- name: Uninstall Docker
+  hosts: [docker0, docker1, docker2]
+  become: true
+  roles:
+    - uninstall
+  tags:
+    - uninstall

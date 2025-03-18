@@ -1,0 +1,18 @@
+---
+- name: Copy deb files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ docker_copy_file_destination }}/{{ item }}"
+  loop: "{{ docker_deb_files }}"
+
+- name: Install Docker packages
+  shell: |
+    dpkg -i {{ docker_copy_file_destination }}/{{ item }}
+  loop: "{{ docker_deb_files }}"
+
+- name: Add users to Docker group
+  user:
+    name: "{{ item }}"
+    groups: "{{ docker_docker_group }}"
+    state: present
+  loop: "{{ docker_users }}"

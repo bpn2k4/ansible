@@ -1,0 +1,4 @@
+---
+# Users to add to Docker group
+docker_users:
+  - "{{ ansible_user }}"

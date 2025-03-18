@@ -1,0 +1,9 @@
+---
+docker_docker_group: docker
+docker_copy_file_destination: /tmp
+docker_deb_files:
+  - containerd.deb
+  - docker-buildx-plugin.deb
+  - docker-ce-cli.deb
+  - docker-ce.deb
+  - docker-compose-plugin.deb

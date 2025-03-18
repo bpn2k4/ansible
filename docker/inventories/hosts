@@ -1,0 +1,4 @@
+[docker]
+docker0 ansible_host=10.1.56.20 ansible_user=ubuntu
+docker1 ansible_host=10.1.56.21 ansible_user=ubuntu
+docker2 ansible_host=10.1.56.22 ansible_user=ubuntu

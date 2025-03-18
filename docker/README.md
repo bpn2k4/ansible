@@ -12,21 +12,31 @@ Docker components:
 | docker-buildx-plugin  | 0.21.0  |
 | docker-compose-plugin | 2.33.0  |
 
-**Note**: This module supports only ubuntu noble 24.04.
+**Note**: This module supports only ubuntu noble 24.04, jammy 22.04, focal 20.04.
 
 ## Steps to run
 
 - Download docker packages
+  - Ubuntu 20.04
+    ```bash
+    mkdir -p roles/docker/files
+    wget https://github.com/bpn2k4/ansible/releases/download/docker-28.0.0/docker-focal-28.0.0.tar.gz -O roles/docker/files/docker.tar.gz
+    tar -zxvf roles/docker/files/docker.tar.gz -C roles/docker/files
+    ```
 
-  ```bash
-  mkdir -p roles/docker/files
+  - Ubuntu 22.04
+    ```bash
+    mkdir -p roles/docker/files
+    wget https://github.com/bpn2k4/ansible/releases/download/docker-28.0.0/docker-jammy-28.0.0.tar.gz -O roles/docker/files/docker.tar.gz
+    tar -zxvf roles/docker/files/docker.tar.gz -C roles/docker/files
+    ```
 
-  wget https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/containerd.io_1.7.25-1_amd64.deb -O roles/docker/files/containerd.deb
-  wget https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-buildx-plugin_0.21.0-1~ubuntu.24.04~noble_amd64.deb -O roles/docker/files/docker-buildx-plugin.deb
-  wget https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce-cli_28.0.0-1~ubuntu.24.04~noble_amd64.deb -O roles/docker/files/docker-ce-cli.deb
-  wget https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce_28.0.0-1~ubuntu.24.04~noble_amd64.deb -O roles/docker/files/docker-ce.deb
-  wget https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-compose-plugin_2.33.0-1~ubuntu.24.04~noble_amd64.deb -O roles/docker/files/docker-compose-plugin.deb
-  ```
+  - Ubuntu 24.04
+    ```bash
+    mkdir -p roles/docker/files
+    wget https://github.com/bpn2k4/ansible/releases/download/docker-28.0.0/docker-noble-28.0.0.tar.gz -O roles/docker/files/docker.tar.gz
+    tar -zxvf roles/docker/files/docker.tar.gz -C roles/docker/files
+    ```
 
 - Run playbook
 
